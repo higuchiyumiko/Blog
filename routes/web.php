@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +24,7 @@ Route::post('/posts', [PostController::class, 'store']);
 Route::delete('/posts/{post}', [PostController::class,'delete']);
 
 Route::get('/categories/{category}',[CategoryController::class,'index']);
+
+Route::get('/student',[StudentController::class,'index']);
+Route::get('/student/create',[StudentController::class,'create']);
+Route::post('/student/store',[StudentController::class,'store']);
