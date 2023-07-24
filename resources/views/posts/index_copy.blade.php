@@ -1,10 +1,13 @@
-<x-app-layout>
-    <x-slot name="header">
-        　BlogのIndexページ
-    </x-slot>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <title>Blog</title>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    </head>
     <body>
         <h1>Blog Name</h1>
-        <h2>現在ログインしているユーザー名:{{ Auth::user()->name }}　さんです</h2>
         <div class='posts'>
             @foreach ($posts as $post)
                 <div class='post'>
@@ -35,4 +38,4 @@
             }
         </script>
     </body>
-</x-app-layout>
+</html>
