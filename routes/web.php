@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){
-    Route::get('/','index')->name('index');
+    Route::get('/','index')->name('index');//名前付きルート
     Route::get('/posts/create','create');
     Route::get('/posts/{post}/edit','edit');
     Route::put('/posts/{post}','update');
