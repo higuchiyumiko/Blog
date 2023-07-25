@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){
-    Route::get('/','index');
+    Route::get('/','index')->name('index');;
     Route::get('/posts/create','create');
     Route::get('/posts/{post}/edit','edit');
     Route::put('/posts/{post}','update');
@@ -36,7 +36,7 @@ Route::controller(StudentController::class)->middleware(['auth'])->group(functio
     Route::post('/student/store', 'store');
 });
 
-Route::get('/categories/{category}', [PostController::class, 'index'])->name('index')->middleware('auth');
+Route::get('/categories/{category}', [PostController::class, 'index'])->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
